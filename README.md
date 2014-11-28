@@ -24,16 +24,42 @@ The most important parameters for key generation can be configured directly in t
 
 Please note that this is provided in seconds from the key generation date. The above value would be two years in future.
 
+**Preferences for PreferredSymmetricAlgorithms, PreferredHashAlgorithms and PreferredCompressionAlgorithms**
+
+    svg.setPreferredSymmetricAlgorithms(false, new int[]
+    {
+       SymmetricKeyAlgorithmTags.AES_256,
+       SymmetricKeyAlgorithmTags.AES_192,
+       SymmetricKeyAlgorithmTags.CAST5, 
+       SymmetricKeyAlgorithmTags.AES_128,
+       SymmetricKeyAlgorithmTags.TRIPLE_DES
+    });
+    svg.setPreferredHashAlgorithms(false, new int[]
+    {
+       HashAlgorithmTags.SHA256,
+       HashAlgorithmTags.SHA384,
+       HashAlgorithmTags.SHA512,
+       HashAlgorithmTags.SHA224,
+       HashAlgorithmTags.SHA1
+    });
+    svg.setPreferredCompressionAlgorithms(false, new int[]
+    {
+       CompressionAlgorithmTags.ZLIB,
+       CompressionAlgorithmTags.BZIP2,
+       CompressionAlgorithmTags.ZIP,
+       CompressionAlgorithmTags.UNCOMPRESSED
+    });
+
 ##Dependencies
 
 This class needs two Bouncy Castle [libraries](http://www.bouncycastle.org/latest_releases.html) in order to compile and run:
 
-* bcprov-jdk15on-150.jar and
-* bcpg-jdk15on-150.jar
+* bcprov-jdk15on-151.jar and
+* bcpg-jdk15on-151.jar
 
 ##JCE Unlimited Strength Jurisdiction Policy Files
 
-Bouncy Castle itself requires the *Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 7* to be installed with the JDK. These can be obtained directly from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+Bouncy Castle itself requires the *Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8* to be installed with the JDK. These can be obtained directly from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 ##License
 

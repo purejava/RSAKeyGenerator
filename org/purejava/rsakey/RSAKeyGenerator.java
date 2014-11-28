@@ -8,9 +8,12 @@ import java.security.KeyPairGenerator;
 import java.security.Security;
 import java.util.Date;
 import org.bouncycastle.bcpg.ArmoredOutputStream;
+import org.bouncycastle.bcpg.CompressionAlgorithmTags;
 import org.bouncycastle.bcpg.HashAlgorithmTags;
+import org.bouncycastle.bcpg.SymmetricKeyAlgorithmTags;
 import org.bouncycastle.bcpg.sig.Features;
 import org.bouncycastle.bcpg.sig.KeyFlags;
+import org.bouncycastle.crypto.params.AsymmetricKeyParameter;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.openpgp.PGPEncryptedData;
 import org.bouncycastle.openpgp.PGPKeyPair;
@@ -100,6 +103,29 @@ public class RSAKeyGenerator
         // ExpirationTime of generated key in seconds
         svg.setKeyExpirationTime(true, 86400L * 366 * 2);
         svg.setKeyFlags(true, KeyFlags.ENCRYPT_COMMS + KeyFlags.ENCRYPT_STORAGE);
+        svg.setPreferredSymmetricAlgorithms(false, new int[]
+        {
+            SymmetricKeyAlgorithmTags.AES_256,
+            SymmetricKeyAlgorithmTags.AES_192,
+            SymmetricKeyAlgorithmTags.CAST5, 
+            SymmetricKeyAlgorithmTags.AES_128,
+            SymmetricKeyAlgorithmTags.TRIPLE_DES
+        });
+        svg.setPreferredHashAlgorithms(false, new int[]
+        {
+            HashAlgorithmTags.SHA256,
+            HashAlgorithmTags.SHA384,
+            HashAlgorithmTags.SHA512,
+            HashAlgorithmTags.SHA224,
+            HashAlgorithmTags.SHA1
+        });
+        svg.setPreferredCompressionAlgorithms(false, new int[]
+        {
+            CompressionAlgorithmTags.ZLIB,
+            CompressionAlgorithmTags.BZIP2,
+            CompressionAlgorithmTags.ZIP,
+            CompressionAlgorithmTags.UNCOMPRESSED
+        });
         svg.setPrimaryUserID(true, true);
         svg.setFeature(true, Features.FEATURE_MODIFICATION_DETECTION);
         PGPSignatureSubpacketVector hashedPcks = svg.generate();
