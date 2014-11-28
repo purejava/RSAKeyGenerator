@@ -24,7 +24,7 @@ The most important parameters for key generation can be configured directly in t
 
 Please note that this is provided in seconds from the key generation date. The above value would be two years in future.
 
-**Preferences for PreferredSymmetricAlgorithms, PreferredHashAlgorithms and PreferredCompressionAlgorithms**
+**Key preferences for PreferredSymmetricAlgorithms, PreferredHashAlgorithms and PreferredCompressionAlgorithms**
 
     svg.setPreferredSymmetricAlgorithms(false, new int[]
     {
