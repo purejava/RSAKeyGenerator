@@ -63,4 +63,4 @@ Bouncy Castle itself requires the *Java Cryptography Extension (JCE) Unlimited S
 
 ##License
 
-Copyright (c) 2015 Ralph Plawetzki, http://purejava.org. This program is licensed under the GNU General Public License (GPL) version 3.
+Copyright (c) 2015-2020 Ralph Plawetzki, http://ralph.purejava.org. This program is licensed under the GNU General Public License (GPL) version 3.
