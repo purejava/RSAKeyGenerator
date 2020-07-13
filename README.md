@@ -8,7 +8,7 @@ Although it is straight forward to generate a key pair, the generated keys do no
 To set a key expiration time, there is a little more work to do.
 This utility class contains the necessary PGPSignatureSubpacketVector to achieve this.
 
-##Configuration
+## Configuration
 
 The most important parameters for key generation can be configured directly in the source code.
 
@@ -50,17 +50,17 @@ Please note that this is provided in seconds from the key generation date. The a
        CompressionAlgorithmTags.UNCOMPRESSED
     });
 
-##Dependencies
+## Dependencies
 
 This class needs two Bouncy Castle [libraries](http://www.bouncycastle.org/latest_releases.html) in order to compile and run:
 
 * bcprov-jdk15on-151.jar and
 * bcpg-jdk15on-151.jar
 
-##JCE Unlimited Strength Jurisdiction Policy Files
+## JCE Unlimited Strength Jurisdiction Policy Files
 
 Bouncy Castle itself requires the *Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8* to be installed with the JDK. These can be obtained directly from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
-##License
+## License
 
 Copyright (c) 2015-2020 Ralph Plawetzki, http://ralph.purejava.org. This program is licensed under the GNU General Public License (GPL) version 3.
